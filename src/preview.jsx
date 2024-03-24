@@ -1,5 +1,3 @@
-import { jsxFactory } from "./index";
-
 const Greet = ({ whom }) => (
 	<div>
 		<h3 class="greeting">Hello, {whom ?? "World"}!</h3>
