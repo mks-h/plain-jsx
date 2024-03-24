@@ -1,12 +1,4 @@
-import type { JSX } from "./types.d.ts";
-
-export function jsxFactory(
-	tag:
-		| string
-		| ((props: object | null | undefined, ...children: JSX.Element[]) => any),
-	props: object | null | undefined,
-	...children: JSX.Element[]
-) {
+export function jsxFactory(tag, props, ...children) {
 	if (typeof tag === "function") return tag(props, ...children);
 
 	const elem = document.createElement(tag);
