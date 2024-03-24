@@ -1,0 +1,17 @@
+{
+	"name": "plain-jsx",
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"lib:build": "vite -c vite.config.ts build",
+		"preview:build": "vite -c vite.preview.ts build",
+		"preview:serve": "vite -c vite.preview.ts serve",
+		"preview:dev": "vite -c vite.preview.ts dev"
+	},
+	"author": "Maksym Hazevych <mhazevych@proton.me>",
+	"license": "MIT",
+	"devDependencies": {
+		"prettier": "^3.2.5",
+		"vite": "^5.2.4"
+	}
+}
