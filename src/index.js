@@ -10,12 +10,25 @@ export function jsxFactory(tag, props, ...children) {
 
 	if (children) {
 		for (const child of children) {
-			if (child.nodeType) elem.appendChild(child);
-			else if (typeof child === "string")
-				elem.appendChild(document.createTextNode(child));
-			else elem.appendChild(document.createTextNode(child.toString()));
+			appendChild(elem, child);
 		}
 	}
 
 	return elem;
+}
+
+export function jsxFragment(props, ...children) {
+	const frag = document.createDocumentFragment();
+	for (const child of children) {
+		appendChild(frag, child);
+	}
+
+	return frag;
+}
+
+function appendChild(elem, child) {
+	if (child.nodeType) elem.appendChild(child);
+	else if (typeof child === "string")
+		elem.appendChild(document.createTextNode(child));
+	else elem.appendChild(document.createTextNode(child.toString()));
 }
