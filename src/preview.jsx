@@ -1,12 +1,11 @@
 import { jsxFactory } from "./index";
 
-const SayHello = ({ name }) => (
+const Greet = ({ whom }) => (
 	<div>
-		<h3 class="hi">Hello {name ?? "world"}</h3>
-		<p>I hope you're having a good day</p>
-		<button onclick={'alert("Hi!!!")'}>Hi!!!</button>
+		<h3 class="greeting">Hello, {whom ?? "World"}!</h3>
+		<p>I hope you're having a good day.</p>
+		<button onclick={'alert("You\'re welcome!")'}>Thank you!</button>
 	</div>
 );
 
-/* <Component /> === Component() */
-document.getElementById("root").appendChild(<SayHello name="foo" />);
+document.getElementById("root").appendChild(<Greet whom="User" />);
